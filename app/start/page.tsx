@@ -8,7 +8,7 @@ export default function StartPage() {
                     <h1 className="section-title">スタートガイド</h1>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         何から始めればいいかわからない方へ。<br />
-                        収益化までの道のりを3つのステップで解説します。
+                        収益化までの道のりを2つのステップで解説します。
                     </p>
                 </div>
 
@@ -84,31 +84,6 @@ export default function StartPage() {
                             </div>
                         </div>
                     </section>
-
-                    <div className="h-8 border-l-2 border-dashed border-gray-300 ml-16 md:ml-[16.66%]"></div>
-
-                    {/* Step 3 */}
-                    <div className="flex flex-col md:flex-row gap-8">
-                        <div className="md:w-1/3 flex-shrink-0">
-                            <div className="bg-[#e6f7ff] text-[#00a0e9] h-full min-h-[200px] rounded-xl flex flex-col items-center justify-center p-6 border border-[#b3e0ff]">
-                                <span className="text-6xl font-bold opacity-20 mb-2">03</span>
-                                <h2 className="text-2xl font-bold">学習と<br />実践</h2>
-                            </div>
-                        </div>
-                        <div className="md:w-2/3 py-4">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">小さく始めて、継続する</h3>
-                            <p className="text-gray-700 leading-loose mb-4">
-                                完璧を目指さず、まずは行動に移しましょう。失敗は学びの一部です。
-                                マインドセットを保ちながら、コツコツと継続することが成功への唯一の道です。
-                            </p>
-                            <Link
-                                href="/mindset"
-                                className="inline-block bg-gray-900 text-white px-6 py-2 rounded text-sm font-bold hover:bg-gray-700 transition-colors"
-                            >
-                                マインドセットを学ぶ
-                            </Link>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
