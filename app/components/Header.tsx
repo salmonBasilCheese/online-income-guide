@@ -24,11 +24,11 @@ export default function Header() {
                     <Link href="/about" className="text-sm font-bold text-gray-600 hover:text-[#00a0e9] transition-colors">
                         当サイトについて
                     </Link>
-                    <Link href="/categories" className="text-sm font-bold text-gray-600 hover:text-[#00a0e9] transition-colors">
-                        カテゴリー
-                    </Link>
                     <Link href="/mindset" className="text-sm font-bold text-gray-600 hover:text-[#00a0e9] transition-colors">
                         マインドセット
+                    </Link>
+                    <Link href="/categories" className="text-sm font-bold text-gray-600 hover:text-[#00a0e9] transition-colors">
+                        カテゴリー一覧
                     </Link>
                     <Link
                         href="/start"
