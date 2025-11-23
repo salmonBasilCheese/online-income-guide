@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { roadmaps } from '@/app/data/roadmaps';
 import CopyButton from '@/app/components/CopyButton';
+import ChecklistBox from '@/app/components/ChecklistBox';
 
 export default async function StepDetailPage({ params }: { params: Promise<{ id: string; stepId: string }> }) {
     const { id, stepId } = await params;
@@ -120,28 +121,7 @@ export default async function StepDetailPage({ params }: { params: Promise<{ id:
                         <div className="lg:col-span-1">
                             <div className="sticky top-24 space-y-8">
 
-                                {/* Checklist */}
-                                <div className="bg-white border-2 border-[#00a0e9] rounded-xl p-6 shadow-lg">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">
-                                        完了チェックリスト
-                                    </h3>
-                                    <div className="space-y-3">
-                                        {stepDetail.detailContent.checklist.map((item, i) => (
-                                            <label key={i} className="flex items-start cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors">
-                                                <input type="checkbox" className="mt-1 w-5 h-5 text-[#00a0e9] rounded border-gray-300 focus:ring-[#00a0e9]" />
-                                                <span className="ml-3 text-gray-700 text-sm leading-relaxed">
-                                                    {item}
-                                                </span>
-                                            </label>
-                                        ))}
-                                    </div>
-                                    <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-                                        <p className="text-xs text-gray-500 mb-2">全てチェックしたら次のステップへ！</p>
-                                        <Link href={`/start/${id}`} className="block w-full bg-[#00a0e9] text-white font-bold py-3 rounded-lg hover:bg-[#008bc9] transition-colors">
-                                            ロードマップに戻る
-                                        </Link>
-                                    </div>
-                                </div>
+                                <ChecklistBox items={stepDetail.detailContent.checklist} returnUrl={`/start/${id}`} />
 
                             </div>
                         </div>
