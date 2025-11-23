@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import GrowthCurveGraph from '../components/GrowthCurveGraph';
 
 export default function MindsetPage() {
     return (
@@ -49,8 +50,8 @@ export default function MindsetPage() {
                                     <li>他人と比較せず、昨日の自分と比較する</li>
                                 </ul>
                             </div>
-                            <div className="md:w-1/2 bg-gray-100 h-48 rounded flex items-center justify-center text-gray-400 text-sm border border-gray-200">
-                                [成長曲線のグラフイメージ]
+                            <div className="md:w-1/2 h-64 rounded flex items-center justify-center border border-gray-200 bg-white shadow-sm">
+                                <GrowthCurveGraph />
                             </div>
                         </div>
                     </section>
