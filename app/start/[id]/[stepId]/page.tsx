@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { roadmaps } from '@/app/data/roadmaps';
 import CopyButton from '@/app/components/CopyButton';
 import ChecklistBox from '@/app/components/ChecklistBox';
+import ActionContent from '@/app/components/ActionContent';
+import TemplateBox from '@/app/components/TemplateBox';
 
 export default async function StepDetailPage({ params }: { params: Promise<{ id: string; stepId: string }> }) {
     const { id, stepId } = await params;
@@ -83,9 +85,7 @@ export default async function StepDetailPage({ params }: { params: Promise<{ id:
                                             <h3 className="text-lg font-bold text-[#00a0e9] mb-3">
                                                 {action.title}
                                             </h3>
-                                            <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                                                {action.content}
-                                            </div>
+                                            <ActionContent content={action.content} />
                                             {action.imagePlaceholder && (
                                                 <div className="mt-4 bg-gray-100 rounded-lg aspect-video flex items-center justify-center text-gray-400 text-sm">
                                                     [画像: {action.imagePlaceholder}]
@@ -107,9 +107,7 @@ export default async function StepDetailPage({ params }: { params: Promise<{ id:
                                         <h3 className="text-sm text-gray-400 mb-2 uppercase tracking-wider">
                                             {stepDetail.detailContent.template.title}
                                         </h3>
-                                        <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed overflow-x-auto">
-                                            {stepDetail.detailContent.template.text}
-                                        </pre>
+                                        <TemplateBox title={stepDetail.detailContent.template.title} text={stepDetail.detailContent.template.text} />
                                         <CopyButton text={stepDetail.detailContent.template.text} />
                                     </div>
                                 </section>
